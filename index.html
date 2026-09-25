@@ -6,37 +6,70 @@
 <title>Osrasoft</title>
 <meta name="description" content="Osrasoft — éditeur de services numériques en ligne.">
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#FBF7F0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1E2B3A" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Osrasoft">
+<meta property="og:description" content="Éditeur de services numériques en ligne">
+<meta property="og:image" content="https://osrasoft.fr/assets/og.png">
+<meta property="og:url" content="https://osrasoft.fr/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <style>
-  :root { color-scheme: light dark; }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #fafafa;
-    color: #1a1a1a;
+  :root {
+    color-scheme: light dark;
+    --ink: #1E2B3A;
+    --accent: #D9622B;
+    --cream: #FBF7F0;
+    --bg: var(--cream);
+    --fg: var(--ink);
+    --muted: #5C6774;
   }
   @media (prefers-color-scheme: dark) {
-    body { background: #111; color: #eee; }
+    :root { --bg: var(--ink); --fg: var(--cream); --muted: #A9B3BF; }
   }
-  main { text-align: center; padding: 2rem; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    font-family: Inter, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+    color: var(--fg);
+  }
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  .logo { width: min(520px, 86vw); height: auto; display: block; }
+  .logo-dark { display: none; }
+  @media (prefers-color-scheme: dark) {
+    .logo-light { display: none; }
+    .logo-dark { display: block; }
+  }
   h1 {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
-    font-weight: 700;
-    letter-spacing: -0.03em;
+    position: absolute; width: 1px; height: 1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap;
   }
   p {
-    margin-top: 1rem;
-    font-size: 1.05rem;
-    opacity: 0.65;
+    margin-top: 1.75rem;
+    font-size: clamp(1rem, 2.2vw, 1.2rem);
+    color: var(--muted);
+    letter-spacing: 0.01em;
   }
 </style>
 </head>
 <body>
 <main>
   <h1>Osrasoft</h1>
+  <img class="logo logo-light" src="/assets/logo.svg" alt="Osrasoft" width="385" height="100">
+  <img class="logo logo-dark" src="/assets/logo-dark.svg" alt="" aria-hidden="true" width="385" height="100">
   <p>Éditeur de services numériques en ligne</p>
 </main>
 </body>
