@@ -81,7 +81,7 @@ p { max-width: 62ch; }
 .nav { display: flex; gap: clamp(14px, 3vw, 32px); font-size: .95rem; font-weight: 500; }
 .nav a { text-decoration: none; color: var(--muted); }
 .nav a:hover { color: var(--accent); }
-@media (max-width: 560px) { .nav a:not(:last-child) { display: none; } }
+@media (max-width: 560px) { .nav a:not(:last-child):not(.nav-app) { display: none; } }
 
 /* hero */
 .hero { padding: clamp(64px, 12vw, 140px) 0 clamp(48px, 8vw, 96px); position: relative; }
