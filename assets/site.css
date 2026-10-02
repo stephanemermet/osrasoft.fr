@@ -103,6 +103,12 @@ section + section { border-top: 1px solid var(--line); }
   align-items: center;
 }
 @media (min-width: 900px) { .service { grid-template-columns: 5fr 7fr; } }
+.service + .service { margin-top: clamp(56px, 8vw, 96px); }
+@media (min-width: 900px) {
+  .service-reverse { grid-template-columns: 7fr 5fr; }
+  .service-reverse > .preview { order: -1; }
+  .service-reverse .browser { transform: rotate(1deg); }
+}
 .service h3 { font-size: clamp(1.5rem, 2.6vw, 2rem); margin-bottom: .75rem; }
 .service h3 small { display: block; font-family: var(--font-body); font-size: .85rem; font-weight: 500; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; margin-bottom: .5rem; }
 .service p { margin-bottom: 1.5rem; }
@@ -141,7 +147,7 @@ section + section { border-top: 1px solid var(--line); }
 .phone img { aspect-ratio: 390 / 844; object-fit: cover; object-position: top; width: 100%; height: auto; }
 
 /* upcoming */
-.upcoming { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: 2rem; }
+.upcoming { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); margin-top: clamp(48px, 7vw, 80px); }
 .upcoming .card {
   border: 1px dashed var(--line); border-radius: 16px; padding: 24px;
   color: var(--muted); font-size: .95rem; display: flex; flex-direction: column; gap: 10px;
